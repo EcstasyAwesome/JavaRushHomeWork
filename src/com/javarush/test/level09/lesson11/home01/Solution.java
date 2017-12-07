@@ -1,0 +1,30 @@
+package com.javarush.test.level09.lesson11.home01;
+
+/* Деление на ноль
+Создай метод public static void divisionByZero, в котором подели любое число на ноль и выведи на экран результат деления.
+Оберни вызов метода divisionByZero в try..catch. Выведи стек-трейс исключения используя метод exception.printStackTrace()
+*/
+
+public class Solution {
+
+    public static void main(String[] args) {
+        try
+        {
+            divisionByZero();
+        }
+        catch (Exception exception){
+            exception.printStackTrace();
+        }
+
+    }
+    public static void divisionByZero(){
+        int y = 5 / 0;
+        System.out.println(y);
+    }
+    public static void printStackTrace(Throwable exception){
+        System.out.println(exception);
+        for(StackTraceElement element : exception.getStackTrace()){
+            System.out.println(element);
+        }
+    }
+}
